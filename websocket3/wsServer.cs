@@ -42,7 +42,7 @@ namespace websocket3
 
         void OnServerConnect(IAsyncResult ar)
         {
-            int receiveLength = clientStream.EndRead(ar);
+            client = listner.EndAcceptTcpClient(ar);
             Console.WriteLine("한 클라이언트가 접속했습니다.");
 
             // 클라이언트 접속을 다시 대기
@@ -175,9 +175,7 @@ namespace websocket3
                     false,
                     false,
                     true
-
                 }
-                
                 );
 
             byte[] inforByte = new byte[1];
