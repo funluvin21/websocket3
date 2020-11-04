@@ -175,10 +175,8 @@ namespace websocket3
                     false,
                     false,
                     true
-
                 }
-                
-                );
+            );
 
             byte[] inforByte = new byte[1];
             firstInfor.CopyTo(inforByte, 0);
