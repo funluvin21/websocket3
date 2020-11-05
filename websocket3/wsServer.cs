@@ -79,8 +79,10 @@ namespace websocket3
                 return;
             }
 
-            const string eoi = "\r\n";
+            //클라이언트로 응답을 돌려 줍니다.
+            const string eoi = "\r\n";   //HTTP/1.1 defines sequence CR LF as end-of-line marker
 
+            //보낼 메세지
             string resMessage = "HTTP/1.1 101 Switching Protocols " + eoi
                               + "Connection: Upgrade " + eoi
                               + "Upgrade: websocket " + eoi
@@ -97,10 +99,10 @@ namespace websocket3
             clientStream.Write(response, 0, response.Length);
 
             //에코 메세지 받기 시작
-            clientStream.BeginRead(readBuffer, 0, readBuffer.Length, onEchoReader, null);
+            //clientStream.BeginRead(readBuffer, 0, readBuffer.Length, onEchoReader, null);
                  
         }
-
+        /*
         //에코 메세지를 받아오는 부분
         void onEchoReader(IAsyncResult ar)
         {
@@ -199,5 +201,6 @@ namespace websocket3
             clientStream.BeginRead(readBuffer, 0, readBuffer.Length, onEchoReader, null);
 
         }
+        */
     }
 }
