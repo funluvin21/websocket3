@@ -32,7 +32,7 @@ namespace websocket3
             listner = new TcpListener(IPAddress.Parse(addr), port);
 
             listner.Start();
-            Console.WriteLine("웹소켓 서버를 오픈합니다.");
+            Console.WriteLine("웹소켓 서버를 오픈합니다.!!!");
 
             // 클라이언트 접속 대기
             listner.BeginAcceptTcpClient(OnServerConnect, null);
